@@ -60,8 +60,8 @@ const JobApp: React.FC = () => {
       ) : (
         <>
           <SearchBar onSearch={handleSearch} />
-          <div className="flex w-[1100px]">
-            <div className="w-1/4 mr-4">
+          <div className="flex flex-col lg:flex-row lg:w-[1100px] ">
+            <div className="lg:w-1/4 mr-4">
               <label htmlFor="level" className="block mb-2">Level</label>
               <select
                 id="level"
@@ -101,7 +101,7 @@ const JobApp: React.FC = () => {
                 </div>
               ))}
             </div>
-            <div className="w-3/4">
+            <div className="lg:w-3/4">
             {error ? (
                 <p className="text-red-500 text-center justify-center">{error}</p>
               ) : (

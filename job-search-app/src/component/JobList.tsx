@@ -61,11 +61,11 @@ const JobList: React.FC<JobListProps> = ({ jobs, onJobSelect, companyName, page,
   };
 
   return (
-    <div className="mt-2">
-      <div className="flex items-center justify-end mb-4">
+    <div className="flex flex-col mt-2 lg:mt-2">
+      <div className="flex items-center justify-end lg:justify-end mb-4">
         <input
           type="number"
-          className="p-2 border rounded-lg mr-2 w-16 text-center"
+          className="p-2 border rounded-lg mr-2 w-16 lg:text-center"
           placeholder=""
           value={pageNumberInput}
           onChange={handlePageNumberChange}
@@ -85,7 +85,7 @@ const JobList: React.FC<JobListProps> = ({ jobs, onJobSelect, companyName, page,
           Go
         </button>
       </div>
-      <div className="pagination mt-4 flex justify-end space-x-4 mb-2">
+      <div className="pagination mt-4 flex justify-end lg:justify-end space-x-4 mb-2">
         <button
           className="p-2 bg-gray-200 rounded"
           onClick={() => setPage((prevPage) => Math.max(prevPage - 1, 1))}
@@ -98,7 +98,7 @@ const JobList: React.FC<JobListProps> = ({ jobs, onJobSelect, companyName, page,
           Next &raquo;
         </button>
       </div>
-      <ul>
+      <div className='sm:grid-cols-1'>
         {jobs.slice(0,6).map((job, index) => (
           <li
             key={job.id}
@@ -133,8 +133,8 @@ const JobList: React.FC<JobListProps> = ({ jobs, onJobSelect, companyName, page,
             </div>
           </li>
         ))}
-      </ul>
-      <div className="pagination mt-4 flex justify-end space-x-4">
+      </div>
+      <div className="pagination mt-4 flex justify-end lg:justify-end space-x-4">
         <button
           className="p-2 bg-gray-200 rounded"
           onClick={() => setPage((prevPage) => Math.max(prevPage - 1, 1))}

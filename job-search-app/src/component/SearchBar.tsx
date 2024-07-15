@@ -19,16 +19,16 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex justify-center items-center my-4">
-      <div className="relative w-[1100px] h-[100px] p-8 bg-white flex justify-center items-center shadow-md rounded-md">
+    <div className="flex flex-row lg:flex-row justify-center items-center my-4">
+      <div className="relative flex flex-col lg:w-[1100px] lg:h-[100px] p-8 bg-white flex justify-center items-center shadow-md rounded-md">
         <img src={Companies} alt="companies" className="absolute inset-0 w-full h-full object-cover rounded-md"/>
-        <div className="relative w-full max-w-[700px]">
+        <div className="relative w-full lg:max-w-[700px]">
           <input
             type="text"
             value={company}
             onChange={(e) => setCompany(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Search by company name"
+            placeholder="Search by company"
             className="w-full p-2 border border-white bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 pr-20"
           />
           <button
